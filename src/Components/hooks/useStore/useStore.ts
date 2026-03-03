@@ -66,7 +66,7 @@ export default function useStore() {
     setCartData((prev) => [...prev, { id, quantity: 1 }]);
   };
 
-  const _incrementCart = (id: number, qty: number): void => {
+  const _incrementCart = (id: number, qty: number | null): void => {
     setCartData((prev) =>
       [...prev].map((cart) => {
         if (cart.id !== id) {
@@ -75,7 +75,7 @@ export default function useStore() {
         return {
           ...cart,
           quantity:
-            qty === 0
+            qty === null
               ? cart.quantity + 1
               : qty === -1
                 ? cart.quantity - 1
@@ -85,7 +85,7 @@ export default function useStore() {
     );
   };
 
-  const updateCart = (id: number, qty: number = 0) => {
+  const updateCart = (id: number, qty: number | null = null) => {
     const found = cartData.find((cart) => cart.id === id);
     if (found === undefined) {
       _addCart(id);
