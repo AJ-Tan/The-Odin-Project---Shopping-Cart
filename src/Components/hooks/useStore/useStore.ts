@@ -62,28 +62,37 @@ export default function useStore() {
     findData: findStoreData,
   };
 
-  const _addCart = (id: number, quantity: number): void => {
-    setCartData((prev) => [...prev, { id, quantity }]);
+  const _addCart = (id: number): void => {
+    setCartData((prev) => [...prev, { id, quantity: 1 }]);
   };
 
-  const _incrementCart = (id: number, quantity: number): void => {
+  const _incrementCart = (id: number, qty: number): void => {
     setCartData((prev) =>
       [...prev].map((cart) => {
         if (cart.id !== id) {
           return cart;
         }
-        return { ...cart, quantity };
+        return {
+          ...cart,
+          quantity:
+            qty === 0
+              ? cart.quantity + 1
+              : qty === -1
+                ? cart.quantity - 1
+                : qty,
+        };
       }),
     );
   };
 
-  const updateCart = (id: number, qty: number) => {
+  const updateCart = (id: number, qty: number = 0) => {
     const found = cartData.find((cart) => cart.id === id);
     if (found === undefined) {
-      _addCart(id, qty);
+      _addCart(id);
     } else {
       _incrementCart(id, qty);
     }
+    setCartData((prev) => [...prev].filter((cart) => cart.quantity > 0));
   };
 
   const removeCart = (id: number) => {
