@@ -24,7 +24,9 @@ export default function useStore() {
   const [storeData, setStoreData] = useState<Product[] | null>(null);
   const [storeLoading, setLoading] = useState<boolean>(true);
   const [storeLoadingError, setError] = useState<string | null>(null);
-  const [cartData, setCartData] = useState<Cart[] | []>([]);
+  const [cartData, setCartData] = useState<Cart[] | []>(
+    JSON.parse(localStorage.getItem("cartData") || "[]"),
+  );
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products/")
@@ -48,6 +50,10 @@ export default function useStore() {
       });
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem("cartData", JSON.stringify(cartData));
+  }, [cartData]);
+
   const findStoreData = (id: number): Product | null => {
     if (Array.isArray(storeData)) {
       return storeData.find((data: { id: number }) => data.id === id) || null;
@@ -62,11 +68,18 @@ export default function useStore() {
     findData: findStoreData,
   };
 
-  const _addCart = (id: number): void => {
-    setCartData((prev) => [...prev, { id, quantity: 1 }]);
+  const _addCart = (id: number, quantity: number | null): void => {
+    setCartData((prev) => [
+      ...prev,
+      { id, quantity: quantity === null ? 1 : quantity },
+    ]);
   };
 
-  const _incrementCart = (id: number, qty: number | null): void => {
+  const _incrementCart = (
+    id: number,
+    qty: number | null,
+    replace: boolean,
+  ): void => {
     setCartData((prev) =>
       [...prev].map((cart) => {
         if (cart.id !== id) {
@@ -77,20 +90,24 @@ export default function useStore() {
           quantity:
             qty === null
               ? cart.quantity + 1
-              : qty === -1
-                ? cart.quantity - 1
-                : qty,
+              : replace
+                ? qty
+                : cart.quantity + qty,
         };
       }),
     );
   };
 
-  const updateCart = (id: number, qty: number | null = null) => {
+  const updateCart = (
+    id: number,
+    qty: number | null = null,
+    replace: boolean = false,
+  ) => {
     const found = cartData.find((cart) => cart.id === id);
     if (found === undefined) {
-      _addCart(id);
+      _addCart(id, qty);
     } else {
-      _incrementCart(id, qty);
+      _incrementCart(id, qty, replace);
     }
     setCartData((prev) => [...prev].filter((cart) => cart.quantity > 0));
   };

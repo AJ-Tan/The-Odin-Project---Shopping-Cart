@@ -7,13 +7,11 @@ function StoreTest() {
   if (store.loadingErr) return <p>{store.loadingErr}</p>;
 
   const handleAdd = (id: number) => {
-    cart.update(id);
+    cart.update(id, 1);
   };
   const handleReduce = (id: number) => {
     cart.update(id, -1);
   };
-
-  console.log(store.data);
 
   return (
     <div className="store">
