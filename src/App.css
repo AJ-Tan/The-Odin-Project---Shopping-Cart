@@ -1,0 +1,48 @@
+#root {
+  width: 100%;
+}
+
+.btn-clean {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+}
+
+button {
+  svg {
+    fill: var(--text-color-4);
+  }
+  path {
+    stroke: var(--text-color-4);
+  }
+
+  &:hover svg {
+    fill: var(--text-color-1);
+  }
+  &:hover path {
+    stroke: var(--text-color-1);
+  }
+
+  &:hover .close-icon path {
+    stroke: var(--color-danger);
+    fill: var(--color-danger);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

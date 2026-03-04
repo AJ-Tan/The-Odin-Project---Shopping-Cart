@@ -19,8 +19,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --primary-color-1: rgb(255, 125, 26);
+  --text-color-1: black;
+  --text-color-2: rgb(24, 24, 24);
+  --text-color-3: rgb(64, 64, 64);
+  --text-color-4: rgb(117, 123, 135);
+  --border-color: rgb(201, 201, 201);
+  --color-danger: red;
+}
+
+:root {
+  --animation-speed: 0.35s;
+}
+
 a {
-  font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
 }
@@ -54,9 +67,11 @@ button {
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+img,
+svg {
+  display: block;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {

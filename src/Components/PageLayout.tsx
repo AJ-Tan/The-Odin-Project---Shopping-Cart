@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import PageFooter from "./PageFooter";
-import PageHeader from "./PageHeader";
+import PageHeader from "./PageHeader/PageHeader";
 
 function PageLayout() {
   return (

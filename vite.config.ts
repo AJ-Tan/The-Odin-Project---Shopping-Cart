@@ -2,9 +2,10 @@
 /// <reference types="vite/client" />
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
+import svgr from "vite-plugin-svgr";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), svgr()],
   test: {
     globals: true, // Enables global test functions like describe, it, expect without imports
     environment: "jsdom", // Simulates browser DOM for React tests

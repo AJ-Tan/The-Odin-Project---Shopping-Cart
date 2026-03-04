@@ -1,0 +1,152 @@
+ul {
+  list-style-type: none;
+}
+
+.page-header,
+.page-header-wrapper,
+.page-nav ul,
+.page-header-left,
+.page-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.page-header {
+  justify-content: center;
+  width: 100%;
+}
+
+.page-header-wrapper {
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+
+  width: 100%;
+  max-width: 73rem;
+
+  @media screen and (max-width: 1180px) {
+    padding-inline: 1rem;
+  }
+}
+
+.page-header-right {
+  gap: 2rem;
+}
+
+.page-brand {
+  padding-inline-end: 2rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+.page-nav {
+  margin-block-start: 0.1rem;
+  height: 100%;
+  ul {
+    column-gap: 1.5rem;
+  }
+
+  li {
+    padding-block: 2rem;
+    display: block;
+    height: 100%;
+  }
+
+  a {
+    color: var(--text-color-4);
+  }
+  a:hover {
+    color: var(--text-color-1);
+  }
+
+  @media screen and (min-width: 600px) {
+    li:has(a:hover) {
+      background: linear-gradient(
+        to top,
+        var(--primary-color-1) 5%,
+        transparent 5%
+      );
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .btn-menu[aria-expanded="true"] ~ .nav-overlay {
+    display: block;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+
+  .page-nav {
+    background-color: white;
+    max-width: 65vw;
+    margin: 0;
+    padding: 1.5rem;
+    animation: slide-in var(--animation-speed);
+
+    &.close {
+      animation: slide-out var(--animation-speed);
+    }
+
+    button {
+      margin-inline-start: -0.2rem;
+      margin-block-end: 2rem;
+    }
+
+    ul {
+      flex-direction: column;
+      align-items: start;
+      row-gap: 0.75rem;
+    }
+
+    li {
+      padding-block: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+  }
+}
+
+.menu-icon,
+.close-icon,
+.cart-icon {
+  margin-block-start: 0.2rem;
+  width: 1.5rem;
+}
+
+button:has(.menu-icon) {
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
+.menu-icon {
+  margin-inline-end: 1rem;
+  padding-block: 1.5rem;
+}
+
+button:has(.close-icon) {
+  display: none;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+button:has(.user-avatar):hover {
+  border-radius: 100%;
+  outline: 2px solid var(--primary-color-1);
+}
+.user-avatar {
+  width: 2.75rem;
+}
