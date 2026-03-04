@@ -1,10 +1,10 @@
 import "./App.css";
-import StoreTest from "./Components/hooks/useStore/StoreTest";
+import PageLayout from "./Components/PageLayout";
 
 function App() {
   return (
     <div id="app">
-      <StoreTest />
+      <PageLayout />
     </div>
   );
 }
