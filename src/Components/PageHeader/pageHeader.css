@@ -29,7 +29,11 @@ ul {
 }
 
 .page-header-right {
+  position: relative;
   gap: 2rem;
+  @media screen and (max-width: 600px) {
+    gap: 1.5rem;
+  }
 }
 
 .page-brand {
@@ -37,6 +41,9 @@ ul {
 
   h1 {
     font-size: 2rem;
+    @media screen and (max-width: 600px) {
+      font-size: 1.75rem;
+    }
   }
 }
 
@@ -90,7 +97,7 @@ ul {
     background-color: white;
     max-width: 65vw;
     margin: 0;
-    padding: 1.5rem;
+    padding: 1.25rem;
     animation: slide-in var(--animation-speed);
 
     &.close {
@@ -121,6 +128,9 @@ ul {
 .cart-icon {
   margin-block-start: 0.2rem;
   width: 1.5rem;
+  @media screen and (max-width: 600px) {
+    width: 1.2rem;
+  }
 }
 
 button:has(.menu-icon) {
@@ -133,6 +143,9 @@ button:has(.menu-icon) {
 .menu-icon {
   margin-inline-end: 1rem;
   padding-block: 1.5rem;
+  @media screen and (max-width: 600px) {
+    padding-block: 1.25rem;
+  }
 }
 
 button:has(.close-icon) {
@@ -149,4 +162,7 @@ button:has(.user-avatar):hover {
 }
 .user-avatar {
   width: 2.75rem;
+  @media screen and (max-width: 600px) {
+    width: 2.25rem;
+  }
 }

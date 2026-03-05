@@ -2,7 +2,7 @@ import PageLayout from "./Components/PageLayout";
 import Home from "./Components/MainContent/Home";
 import type { RouteObject } from "react-router";
 import Products from "./Components/MainContent/Products";
-import Cart from "./Components/MainContent/Cart";
+import Checkout from "./Components/MainContent/Checkout";
 import App from "./App";
 import ErrorPage from "./Components/PageError";
 
@@ -24,8 +24,8 @@ export const routes: RouteObject[] = [
         element: <Products />,
       },
       {
-        path: "/cart",
-        element: <Cart />,
+        path: "checkout",
+        element: <Checkout />,
       },
     ],
   },

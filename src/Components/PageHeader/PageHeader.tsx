@@ -4,8 +4,10 @@ import CartSvg from "../../assets/cart-icon.svg?react";
 import MenuSvg from "../../assets/menu-icon.svg?react";
 import CloseSvg from "../../assets/close-icon.svg?react";
 import imgAvatar from "../../assets/image-avatar.png";
+import CartDetails from "./CartDetails/CartDetails";
+import type { CartType } from "../hooks/useStore";
 
-function PageHeader() {
+function PageHeader({ cart }: { cart: CartType }) {
   const openMenu = () => {
     const menuBtn = document.querySelector(".btn-menu");
     if (!menuBtn) return;
@@ -27,6 +29,26 @@ function PageHeader() {
       },
       { once: true },
     );
+  };
+
+  const openCart = () => {
+    const cartDetails = document.querySelector("#cart-details");
+    const cartBtn = document.querySelector(".btn-cart");
+    if (cartBtn instanceof HTMLElement && cartDetails instanceof HTMLElement) {
+      if (cartBtn.ariaExpanded === "false") {
+        cartBtn.ariaExpanded = "true";
+      } else {
+        cartDetails.classList.add("close");
+        cartDetails.addEventListener(
+          "animationend",
+          () => {
+            cartDetails.classList.remove("close");
+            cartBtn.ariaExpanded = "false";
+          },
+          { once: true },
+        );
+      }
+    }
   };
 
   const closeMenuFromOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -73,7 +95,7 @@ function PageHeader() {
                   <Link to="products">Products</Link>
                 </li>
                 <li>
-                  <Link to="Cart">Checkout</Link>
+                  <Link to="checkout">Checkout</Link>
                 </li>
               </ul>
             </nav>
@@ -81,11 +103,12 @@ function PageHeader() {
         </div>
         <div className="page-header-right">
           <button
-            className="btn-clean"
+            className="btn-cart btn-clean"
             type="button"
-            aria-label="Show current cart items."
+            aria-label="Toggle display of cart items."
             aria-expanded="false"
-            aria-controls=""
+            aria-controls="cart-details"
+            onClick={openCart}
           >
             <div className="cart-icon">
               <CartSvg />
@@ -96,6 +119,7 @@ function PageHeader() {
               <img src={imgAvatar} alt="User avatar." />
             </div>
           </button>
+          <CartDetails cart={cart} />
         </div>
       </div>
     </header>

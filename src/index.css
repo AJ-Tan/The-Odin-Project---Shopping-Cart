@@ -21,6 +21,7 @@
 
 :root {
   --primary-color-1: rgb(255, 125, 26);
+  --primary-color-1-hover: rgba(255, 125, 26, 0.877);
   --text-color-1: black;
   --text-color-2: rgb(24, 24, 24);
   --text-color-3: rgb(64, 64, 64);
