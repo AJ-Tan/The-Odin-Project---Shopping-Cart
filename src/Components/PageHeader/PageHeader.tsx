@@ -8,6 +8,7 @@ import CartDetails from "./CartDetails/CartDetails";
 import type { CartType } from "../hooks/useStore";
 
 function PageHeader({ cart }: { cart: CartType }) {
+  const totalCartItems = cart.totalItems();
   const openMenu = () => {
     const menuBtn = document.querySelector(".btn-menu");
     if (!menuBtn) return;
@@ -111,6 +112,11 @@ function PageHeader({ cart }: { cart: CartType }) {
             onClick={openCart}
           >
             <div className="cart-icon">
+              {totalCartItems > 0 && (
+                <div className="cart-icon-total">
+                  <span>{totalCartItems}</span>
+                </div>
+              )}
               <CartSvg />
             </div>
           </button>

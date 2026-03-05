@@ -26,6 +26,7 @@
   --text-color-2: rgb(24, 24, 24);
   --text-color-3: rgb(64, 64, 64);
   --text-color-4: rgb(117, 123, 135);
+  --text-color-5: white;
   --border-color: rgb(201, 201, 201);
   --color-danger: red;
 }

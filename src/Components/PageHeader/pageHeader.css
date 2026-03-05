@@ -133,6 +133,30 @@ ul {
   }
 }
 
+.cart-icon {
+  position: relative;
+}
+
+.cart-icon-total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -40%;
+  right: -40%;
+  width: 1.2rem;
+  aspect-ratio: 1/1;
+  background-color: var(--primary-color-1);
+  border-radius: 100%;
+  color: var(--text-color-5);
+  font-size: 0.8rem;
+  z-index: 1;
+
+  span {
+    margin-block-start: -0.1rem;
+  }
+}
+
 button:has(.menu-icon) {
   display: none;
 
