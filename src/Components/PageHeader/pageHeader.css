@@ -4,7 +4,6 @@ ul {
 
 .page-header,
 .page-header-wrapper,
-.page-nav ul,
 .page-header-left,
 .page-header-right {
   display: flex;
@@ -23,7 +22,7 @@ ul {
   width: 100%;
   max-width: 73rem;
 
-  @media screen and (max-width: 1180px) {
+  @media screen and (max-width: 1430px) {
     padding-inline: 1rem;
   }
 }
@@ -31,7 +30,7 @@ ul {
 .page-header-right {
   position: relative;
   gap: 2rem;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     gap: 1.5rem;
   }
 }
@@ -40,85 +39,11 @@ ul {
   padding-inline-end: 2rem;
 
   h1 {
+    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    letter-spacing: 1px;
     font-size: 2rem;
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 750px) {
       font-size: 1.75rem;
-    }
-  }
-}
-
-.page-nav {
-  margin-block-start: 0.1rem;
-  height: 100%;
-  ul {
-    column-gap: 1.5rem;
-  }
-
-  li {
-    padding-block: 2rem;
-    display: block;
-    height: 100%;
-  }
-
-  a {
-    color: var(--text-color-4);
-  }
-  a:hover {
-    color: var(--text-color-1);
-  }
-
-  @media screen and (min-width: 600px) {
-    li:has(a:hover) {
-      background: linear-gradient(
-        to top,
-        var(--primary-color-1) 5%,
-        transparent 5%
-      );
-    }
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .btn-menu[aria-expanded="true"] ~ .nav-overlay {
-    display: block;
-  }
-
-  .nav-overlay {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 2;
-  }
-
-  .page-nav {
-    background-color: white;
-    max-width: 65vw;
-    margin: 0;
-    padding: 1.25rem;
-    animation: slide-in var(--animation-speed);
-
-    &.close {
-      animation: slide-out var(--animation-speed);
-    }
-
-    button {
-      margin-inline-start: -0.2rem;
-      margin-block-end: 2rem;
-    }
-
-    ul {
-      flex-direction: column;
-      align-items: start;
-      row-gap: 0.75rem;
-    }
-
-    li {
-      padding-block: 0;
-      font-size: 1.1rem;
-      font-weight: 700;
     }
   }
 }
@@ -128,13 +53,14 @@ ul {
 .cart-icon {
   margin-block-start: 0.2rem;
   width: 1.5rem;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     width: 1.2rem;
   }
 }
 
 .cart-icon {
   position: relative;
+  container-type: inline-size;
 }
 
 .cart-icon-total {
@@ -144,12 +70,12 @@ ul {
   position: absolute;
   top: -40%;
   right: -40%;
-  width: 1.2rem;
+  width: 80cqw;
   aspect-ratio: 1/1;
   background-color: var(--primary-color-1);
   border-radius: 100%;
   color: var(--text-color-5);
-  font-size: 0.8rem;
+  font-size: 60cqw;
   z-index: 1;
 
   span {
@@ -160,14 +86,14 @@ ul {
 button:has(.menu-icon) {
   display: none;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     display: block;
   }
 }
 .menu-icon {
   margin-inline-end: 1rem;
   padding-block: 1.5rem;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     padding-block: 1.25rem;
   }
 }
@@ -175,7 +101,7 @@ button:has(.menu-icon) {
 button:has(.close-icon) {
   display: none;
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     display: block;
   }
 }
@@ -186,7 +112,7 @@ button:has(.user-avatar):hover {
 }
 .user-avatar {
   width: 2.75rem;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 750px) {
     width: 2.25rem;
   }
 }

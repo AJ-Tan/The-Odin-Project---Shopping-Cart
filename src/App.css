@@ -1,5 +1,11 @@
 #root {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+
+  & > *:nth-child(2) {
+    flex: 1;
+  }
 }
 
 .btn-clean {
@@ -26,6 +32,14 @@ button {
   &:hover .close-icon path {
     stroke: var(--color-danger);
     fill: var(--color-danger);
+  }
+}
+
+.page-footer {
+  text-align: center;
+
+  span {
+    color: var(--primary-color-1);
   }
 }
 

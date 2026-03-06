@@ -1,60 +1,36 @@
-import { Link } from "react-router";
 import "./pageHeader.css";
 import CartSvg from "../../assets/cart-icon.svg?react";
 import MenuSvg from "../../assets/menu-icon.svg?react";
-import CloseSvg from "../../assets/close-icon.svg?react";
 import imgAvatar from "../../assets/image-avatar.png";
 import CartDetails from "./CartDetails/CartDetails";
 import type { CartType } from "../hooks/useStore";
+import PageNav from "./PageNav/PageNav";
+import { useState } from "react";
 
 function PageHeader({ cart }: { cart: CartType }) {
+  const [displayCart, setDisplayCart] = useState(false);
   const totalCartItems = cart.totalItems();
+
   const openMenu = () => {
     const menuBtn = document.querySelector(".btn-menu");
-    if (!menuBtn) return;
-    menuBtn.ariaExpanded = "true";
-  };
-
-  const closeMenu = () => {
-    const pageNav = document.querySelector(".page-nav");
-    const menuBtn = document.querySelector(".btn-menu");
-    if (!menuBtn) return;
-    if (!pageNav) return;
-    pageNav.classList.add("close");
-
-    pageNav.addEventListener(
-      "animationend",
-      () => {
-        pageNav.classList.remove("close");
-        menuBtn.ariaExpanded = "false";
-      },
-      { once: true },
-    );
-  };
-
-  const openCart = () => {
-    const cartDetails = document.querySelector("#cart-details");
-    const cartBtn = document.querySelector(".btn-cart");
-    if (cartBtn instanceof HTMLElement && cartDetails instanceof HTMLElement) {
-      if (cartBtn.ariaExpanded === "false") {
-        cartBtn.ariaExpanded = "true";
-      } else {
-        cartDetails.classList.add("close");
-        cartDetails.addEventListener(
-          "animationend",
-          () => {
-            cartDetails.classList.remove("close");
-            cartBtn.ariaExpanded = "false";
-          },
-          { once: true },
-        );
-      }
+    if (menuBtn instanceof HTMLElement) {
+      menuBtn.ariaExpanded = "true";
     }
   };
 
-  const closeMenuFromOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (e.target instanceof HTMLElement && e.target.id === "main-menu") {
-      closeMenu();
+  const toggleCart = () => {
+    if (displayCart === false) setDisplayCart(true);
+    const cartDetails = document.querySelector("#cart-details");
+    if (cartDetails instanceof HTMLElement) {
+      cartDetails.classList.add("close");
+      cartDetails.addEventListener(
+        "animationend",
+        () => {
+          cartDetails.classList.remove("close");
+          setDisplayCart(false);
+        },
+        { once: true },
+      );
     }
   };
 
@@ -75,41 +51,18 @@ function PageHeader({ cart }: { cart: CartType }) {
             </div>
           </button>
           <div className="page-brand">
-            <h1>BRAND</h1>
+            <h1>CartVariety</h1>
           </div>
-          <div
-            id="main-menu"
-            className="nav-overlay"
-            onClick={closeMenuFromOverlay}
-          >
-            <nav className="page-nav">
-              <button className="btn-clean" type="button" onClick={closeMenu}>
-                <div className="close-icon">
-                  <CloseSvg />
-                </div>
-              </button>
-              <ul>
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="products">Products</Link>
-                </li>
-                <li>
-                  <Link to="checkout">Checkout</Link>
-                </li>
-              </ul>
-            </nav>
-          </div>
+          <PageNav />
         </div>
         <div className="page-header-right">
           <button
             className="btn-cart btn-clean"
             type="button"
             aria-label="Toggle display of cart items."
-            aria-expanded="false"
+            aria-expanded={displayCart ? "true" : "false"}
             aria-controls="cart-details"
-            onClick={openCart}
+            onClick={toggleCart}
           >
             <div className="cart-icon">
               {totalCartItems > 0 && (
@@ -125,7 +78,7 @@ function PageHeader({ cart }: { cart: CartType }) {
               <img src={imgAvatar} alt="User avatar." />
             </div>
           </button>
-          <CartDetails cart={cart} />
+          {displayCart && <CartDetails cart={cart} toggleCart={toggleCart} />}
         </div>
       </div>
     </header>

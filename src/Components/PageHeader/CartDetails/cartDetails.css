@@ -1,5 +1,5 @@
 #cart-details {
-  display: none;
+  display: block;
   border-radius: 1rem;
   position: absolute;
   top: 180%;
@@ -13,6 +13,9 @@
   }
 
   header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-size: 0.9rem;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--border-color);
@@ -21,6 +24,11 @@
 
 .btn-cart[aria-expanded="true"] ~ #cart-details {
   display: block;
+}
+
+.cart-details-total {
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
 .cart-list,

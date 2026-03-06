@@ -1,5 +1,9 @@
 function PageFooter() {
-  return <div>PageFooter</div>;
+  return (
+    <footer className="page-footer">
+      Coded by: <span>Aldomin Joseph R. Tan</span>
+    </footer>
+  );
 }
 
 export default PageFooter;

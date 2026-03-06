@@ -1,16 +1,43 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import { Link } from "react-router";
 import DeleteIcon from "../../../assets/delete-icon.svg?react";
 import "./cartDetails.css";
 import type { CartType } from "../../hooks/useStore";
 
-function CartDetails({ cart }: { cart: CartType }) {
+function CartDetails({
+  cart,
+  toggleCart,
+}: {
+  cart: CartType;
+  toggleCart: () => void;
+}) {
   const data = cart.data();
+  const cartRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (cartRef.current && !cartRef.current.contains(e.target as Node)) {
+        toggleCart();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [toggleCart]);
 
   return (
-    <div id="cart-details">
+    <div ref={cartRef} id="cart-details">
       <header>
         <h2>Cart</h2>
+        <span className="cart-details-total">
+          Total: $
+          {data
+            .reduce((prev, item) => prev + item.price * item.quantity, 0)
+            .toFixed(2)}
+        </span>
       </header>
       <div className="cart-details-container">
         {data ? (
@@ -40,7 +67,7 @@ function CartDetails({ cart }: { cart: CartType }) {
                 </li>
               ))}
             </ul>
-            <Link className="cart-checkout" to="/checkout">
+            <Link className="cart-checkout" to="/checkout" onClick={toggleCart}>
               Checkout
             </Link>
           </div>
