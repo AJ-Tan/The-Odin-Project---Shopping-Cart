@@ -1,8 +1,8 @@
 import PageLayout from "./Components/PageLayout";
-import Home from "./Components/MainContent/Home";
+import Home from "./Components/MainContent/Home/Home";
 import type { RouteObject } from "react-router";
-import Products from "./Components/MainContent/Products";
-import Checkout from "./Components/MainContent/Checkout";
+import Products from "./Components/MainContent/Products/Products";
+import Checkout from "./Components/MainContent/Checkout/Checkout";
 import App from "./App";
 import ErrorPage from "./Components/PageError";
 
