@@ -15,6 +15,13 @@ type Product = {
   rating: Rating;
 };
 
+export type StoreType = {
+  loading: boolean;
+  loadingErr: string | null;
+  data: Product[];
+  findData: (id: number) => Product | null;
+};
+
 type Cart = {
   id: number;
   quantity: number;

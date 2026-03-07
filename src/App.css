@@ -35,11 +35,36 @@ button {
   }
 }
 
+main {
+  padding: 3rem 1rem;
+  @media screen and (max-width: 750px) {
+    padding-block: 2rem;
+  }
+}
+
 .page-footer {
   text-align: center;
 
   span {
     color: var(--primary-color-1);
+  }
+}
+
+.primary-button {
+  background-color: var(--primary-color-1);
+  border-radius: 0.5rem;
+  color: var(--text-color-1);
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-block-start: 1rem;
+  text-align: center;
+  padding-block: 0.7rem;
+  width: 100%;
+
+  &:hover {
+    background-color: var(--primary-color-1-hover);
+    color: var(--text-color-1);
   }
 }
 

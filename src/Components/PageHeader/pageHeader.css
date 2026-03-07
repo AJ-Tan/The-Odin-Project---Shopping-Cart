@@ -20,7 +20,7 @@ ul {
   border-bottom: 1px solid var(--border-color);
 
   width: 100%;
-  max-width: 73rem;
+  max-width: var(--page-wrapper-mw);
 
   @media screen and (max-width: 1430px) {
     padding-inline: 1rem;
@@ -39,7 +39,7 @@ ul {
   padding-inline-end: 2rem;
 
   h1 {
-    font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: var(--fonts-1);
     letter-spacing: 1px;
     font-size: 2rem;
     @media screen and (max-width: 750px) {

@@ -10,7 +10,7 @@ function PageLayout() {
     <>
       <PageHeader cart={cart} />
       <main>
-        <Outlet />
+        <Outlet context={{ store }} />
       </main>
       <PageFooter />
     </>

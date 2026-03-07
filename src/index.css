@@ -13,7 +13,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-size: clamp(16px, calc((100vw - 50px) * 0.0498), 19px);
+  font-size: clamp(15px, calc((100vw - 20px) * 0.0449), 19px);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,8 +21,14 @@
 }
 
 :root {
+  --page-wrapper-mw: 73rem;
+  --fonts-1: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+:root {
   --primary-color-1: rgb(255, 125, 26);
   --primary-color-1-hover: rgba(255, 125, 26, 0.877);
+  --primary-color-2: rgb(222, 116, 58);
   --text-color-1: black;
   --text-color-2: rgb(24, 24, 24);
   --text-color-3: rgb(64, 64, 64);
@@ -30,6 +36,7 @@
   --text-color-5: white;
   --border-color: rgb(201, 201, 201);
   --color-danger: red;
+  --rating-color-bg: rgb(209, 215, 226);
 }
 
 :root {

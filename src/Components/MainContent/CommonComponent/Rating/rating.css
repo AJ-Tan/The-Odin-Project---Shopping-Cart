@@ -1,0 +1,59 @@
+.rating {
+  width: max-content;
+}
+
+.star-rating {
+  display: flex;
+}
+
+.star-rating-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.star-rating-container {
+  position: relative;
+}
+
+.star-path,
+.star-path-bg {
+  width: 1.75rem;
+  aspect-ratio: 1/1;
+
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.star-rating-container:has(~ .star-rating-container .star-path.selected)
+  .star-path {
+  background-color: var(--primary-color-1);
+}
+
+.star-path-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--rating-color-bg);
+  z-index: -1;
+}
+
+.rate-avg {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.rate-count {
+  font-size: 0.7rem;
+}

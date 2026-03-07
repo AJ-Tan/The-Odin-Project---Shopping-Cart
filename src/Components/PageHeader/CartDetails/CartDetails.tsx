@@ -67,7 +67,11 @@ function CartDetails({
                 </li>
               ))}
             </ul>
-            <Link className="cart-checkout" to="/checkout" onClick={toggleCart}>
+            <Link
+              className="primary-button"
+              to="/checkout"
+              onClick={toggleCart}
+            >
               Checkout
             </Link>
           </div>

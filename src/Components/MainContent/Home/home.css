@@ -1,0 +1,90 @@
+.home-wrapper {
+  display: flex;
+  justify-content: space-around;
+  max-width: 65rem;
+  margin-inline: auto;
+  gap: 1.5rem;
+
+  & > * {
+    flex: 1;
+    max-width: 27rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.home-image-wrapper {
+  background-color: var(--primary-color-2);
+  padding: 3rem;
+  border-radius: 1.5rem;
+
+  img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+}
+
+.home-details-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home-details {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  gap: 1rem;
+  @media screen and (max-width: 520px) {
+    gap: 0.5rem;
+  }
+}
+
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--fonts-1);
+  font-size: 1rem;
+
+  @media screen and (max-width: 520px) {
+    gap: 0.1rem;
+    font-size: 0.8rem;
+  }
+}
+
+.home-header-eyebrow {
+  font-weight: 800;
+  letter-spacing: 2px;
+  font-size: 0.9em;
+}
+
+.home-header-text {
+  font-size: 2.5em;
+  line-height: 2.75rem;
+}
+
+.home-details-description {
+  font-size: 0.9rem;
+  color: var(--text-color-4);
+}
+
+.details-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--fonts-1);
+}
+
+.btn-shop-now {
+  max-width: 8rem;
+  border: none;
+  background-color: var(--primary-color-1);
+  transition: background-color var(--transition-speed);
+
+  &:hover {
+    background-color: var(--primary-color-1-hover);
+  }
+}
