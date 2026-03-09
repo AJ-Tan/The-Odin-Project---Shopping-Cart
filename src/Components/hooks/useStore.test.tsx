@@ -60,7 +60,10 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 1 }]);
+
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 1 },
+    ]);
   });
 
   it("Increment cart item.", async () => {
@@ -82,13 +85,17 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 1 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 1 },
+    ]);
 
     // Increment cart quantity
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 2 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 2 },
+    ]);
   });
 
   it("Add Item by 5, then increment it by 10.", async () => {
@@ -110,13 +117,17 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 5);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 5 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 5 },
+    ]);
 
     // Increment cart quantity
     act(() => {
       result.current.cart.update(1, 10);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 15 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 15 },
+    ]);
   });
 
   it("Add Item by 5, then replace it by 10.", async () => {
@@ -138,13 +149,17 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 5);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 5 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 5 },
+    ]);
 
-    // Increment cart quantity
+    // Replace cart quantity
     act(() => {
       result.current.cart.update(1, 10, true);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 10 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 10 },
+    ]);
   });
 
   it("Remove cart item.", async () => {
@@ -166,13 +181,15 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data).toEqual([{ id: 1, quantity: 1 }]);
+    expect(result.current.cart.data()).toEqual([
+      { id: 1, title: "test bag", quantity: 1 },
+    ]);
 
     // Remove cart item
     act(() => {
       result.current.cart.remove(1);
     });
 
-    expect(result.current.cart.data).toEqual([]);
+    expect(result.current.cart.data()).toEqual([]);
   });
 });
