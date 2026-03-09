@@ -5,7 +5,7 @@ type Rating = {
   count: number;
 };
 
-type Product = {
+export type Product = {
   id: number;
   title: string;
   price: number;
@@ -37,7 +37,7 @@ export type CartType = {
 };
 
 export default function useStore() {
-  const [storeData, setStoreData] = useState<Product[] | null>(null);
+  const [storeData, setStoreData] = useState<Product[]>([]);
   const [storeLoading, setLoading] = useState<boolean>(true);
   const [storeLoadingError, setError] = useState<string | null>(null);
   const [cartData, setCartData] = useState<Cart[] | []>(

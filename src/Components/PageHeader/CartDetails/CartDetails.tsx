@@ -13,6 +13,9 @@ function CartDetails({
 }) {
   const data = cart.data();
   const cartRef = useRef<HTMLDivElement | null>(null);
+  const handleRemove = (id: number) => {
+    cart.remove(id);
+  };
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -59,6 +62,7 @@ function CartDetails({
                     className="btn-clean"
                     type="button"
                     aria-label="Remove cart item."
+                    onClick={() => handleRemove(item.id)}
                   >
                     <div className="cart-item-delete">
                       <DeleteIcon />

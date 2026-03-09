@@ -8,6 +8,7 @@
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.87);
@@ -37,6 +38,7 @@
   --border-color: rgb(201, 201, 201);
   --color-danger: red;
   --rating-color-bg: rgb(209, 215, 226);
+  --shadow-color: rgba(0, 0, 0, 0.15);
 }
 
 :root {

@@ -33,7 +33,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);
@@ -50,7 +50,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);
@@ -75,7 +75,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);
@@ -107,7 +107,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);
@@ -139,7 +139,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);
@@ -171,7 +171,7 @@ describe("useStore functionalities.", () => {
 
     // Initialization
     expect(result.current.store.loading).toBe(true);
-    expect(result.current.store.data).toBe(null);
+    expect(result.current.store.data).toEqual([]);
 
     await waitFor(() => {
       expect(result.current.store.loading).toBe(false);

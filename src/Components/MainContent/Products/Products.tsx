@@ -12,7 +12,11 @@ function Products() {
         <header className="products-header">
           <h2>Products</h2>
         </header>
-        <div className="products-content"></div>
+        <div className="products-content">
+          {store.data.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
       </div>
     </div>
   );
