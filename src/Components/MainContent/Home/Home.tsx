@@ -2,12 +2,14 @@ import { Link, useOutletContext } from "react-router";
 import type { StoreType } from "../../hooks/useStore";
 import "./home.css";
 import Rating from "../CommonComponent/Rating/Rating";
+import ErrorContent from "../CommonComponent/ErrorContent/ErrorContent";
+import LoadingContent from "../CommonComponent/LoadingContent/LoadingContent";
 
 function Home() {
   const { store } = useOutletContext<{ store: StoreType }>();
 
-  if (store.loading) return <div>Loading</div>;
-  if (store.loadingErr) return <div>Error</div>;
+  if (store.loading) return <LoadingContent />;
+  if (store.loadingErr) return <ErrorContent />;
 
   const storeItem = store.findData(3);
   if (!storeItem) return;

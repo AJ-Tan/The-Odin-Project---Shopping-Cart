@@ -36,7 +36,7 @@ button {
 }
 
 main {
-  padding: 3rem 1rem;
+  padding: 2rem 1rem;
   @media screen and (max-width: 750px) {
     padding-block: 2rem;
   }

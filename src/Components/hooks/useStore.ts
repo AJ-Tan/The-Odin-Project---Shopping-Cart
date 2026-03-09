@@ -27,8 +27,10 @@ type Cart = {
   quantity: number;
 };
 
+type CartData = Product & { quantity: number };
+
 export type CartType = {
-  data: () => (Product & { quantity: number })[];
+  data: () => CartData[];
   update: (id: number, qty?: number | null, replace?: boolean) => void;
   remove: (id: number) => void;
   totalItems: () => number;
@@ -131,13 +133,16 @@ export default function useStore() {
   };
 
   const getCartAllData = () =>
-    cartData.map((cart) => {
+    cartData.reduce((prev, cart): CartData[] => {
       const product = findStoreData(cart.id)!;
-      return { ...product, id: cart.id, quantity: cart.quantity };
-    });
+      if (!product) return prev;
+      return [...prev, { ...product, id: cart.id, quantity: cart.quantity }];
+    }, []);
 
-  const totalItems = (): number =>
-    cartData.reduce((prev, curr) => prev + curr.quantity, 0);
+  const totalItems = (): number => {
+    if (!getCartAllData().length) return 0;
+    return cartData.reduce((prev, curr) => prev + curr.quantity, 0);
+  };
 
   const cart = {
     data: getCartAllData,

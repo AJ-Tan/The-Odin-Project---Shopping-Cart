@@ -1,0 +1,7 @@
+.error-content {
+  max-width: var(--page-wrapper-mw);
+  margin-inline: auto;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color-3);
+}

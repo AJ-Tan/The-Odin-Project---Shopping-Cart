@@ -1,0 +1,4 @@
+.products-wrapper {
+  max-width: var(--page-wrapper-mw);
+  margin-inline: auto;
+}

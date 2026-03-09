@@ -40,7 +40,7 @@ function CartDetails({
         </span>
       </header>
       <div className="cart-details-container">
-        {data ? (
+        {data.length > 0 ? (
           <div className="cart-details-content">
             <ul className="cart-list">
               {data.map((item) => (
