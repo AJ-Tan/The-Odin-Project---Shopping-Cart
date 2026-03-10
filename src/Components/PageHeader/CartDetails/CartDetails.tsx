@@ -24,10 +24,17 @@ function CartDetails({
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    const handleEsc = (e: KeyboardEvent) => {
+      if (cartRef.current && e.key === "Escape") {
+        toggleCart();
+      }
+    };
 
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEsc);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEsc);
     };
   }, [toggleCart]);
 

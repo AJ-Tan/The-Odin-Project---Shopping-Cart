@@ -11,8 +11,11 @@ ul {
 }
 
 .page-header {
+  position: fixed;
+  z-index: 1;
   justify-content: center;
   width: 100%;
+  background-color: var(--bg-color-1);
 }
 
 .page-header-wrapper {

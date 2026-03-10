@@ -39,6 +39,7 @@
   --color-danger: red;
   --rating-color-bg: rgb(209, 215, 226);
   --shadow-color: rgba(0, 0, 0, 0.15);
+  --bg-color-1: rgb(255, 255, 255);
 }
 
 :root {

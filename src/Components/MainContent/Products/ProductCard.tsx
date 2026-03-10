@@ -55,6 +55,8 @@ function ProductCard({ product }: { product: Product }) {
               onKeyDown={(e) => {
                 if (e.key === "-") {
                   e.preventDefault();
+                } else if (e.key === "Enter") {
+                  e.currentTarget.blur();
                 }
               }}
               onBlur={(e) => replaceCart(product.id, e)}
