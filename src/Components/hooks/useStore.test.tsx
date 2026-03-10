@@ -61,7 +61,7 @@ describe("useStore functionalities.", () => {
       result.current.cart.update(1);
     });
 
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 1 },
     ]);
   });
@@ -85,7 +85,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 1 },
     ]);
 
@@ -93,7 +93,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 2 },
     ]);
   });
@@ -117,7 +117,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 5);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 5 },
     ]);
 
@@ -125,7 +125,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 10);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 15 },
     ]);
   });
@@ -149,7 +149,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 5);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 5 },
     ]);
 
@@ -157,7 +157,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1, 10, true);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 10 },
     ]);
   });
@@ -181,7 +181,7 @@ describe("useStore functionalities.", () => {
     act(() => {
       result.current.cart.update(1);
     });
-    expect(result.current.cart.data()).toEqual([
+    expect(result.current.cart.data).toEqual([
       { id: 1, title: "test bag", quantity: 1 },
     ]);
 
@@ -190,6 +190,6 @@ describe("useStore functionalities.", () => {
       result.current.cart.remove(1);
     });
 
-    expect(result.current.cart.data()).toEqual([]);
+    expect(result.current.cart.data).toEqual([]);
   });
 });

@@ -11,7 +11,7 @@ function CartDetails({
   cart: CartType;
   toggleCart: () => void;
 }) {
-  const data = cart.data();
+  const data = cart.data;
   const cartRef = useRef<HTMLDivElement | null>(null);
   const handleRemove = (id: number) => {
     cart.remove(id);

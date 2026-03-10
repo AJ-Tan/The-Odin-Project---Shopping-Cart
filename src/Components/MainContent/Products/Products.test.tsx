@@ -82,7 +82,7 @@ const mockStore = [
 ];
 
 const mockCart = {
-  data: () => mockStore.map((prev) => ({ ...prev, quantity: 1 })),
+  data: mockStore.map((prev) => ({ ...prev, quantity: 1 })),
   update: vi.fn(),
   remove: vi.fn(),
   totalItems: vi.fn(),

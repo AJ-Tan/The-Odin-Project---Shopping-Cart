@@ -7,7 +7,7 @@ import { useEffect, useRef } from "react";
 function ProductCard({ product }: { product: Product }) {
   const { cart } = useOutletContext<{ cart: CartType }>();
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const cartData = cart.data().find((item) => item.id === product.id);
+  const cartData = cart.data.find((item) => item.id === product.id);
 
   useEffect(() => {
     if (inputRef.current instanceof HTMLInputElement) {

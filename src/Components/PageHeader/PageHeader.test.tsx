@@ -6,7 +6,7 @@ import userEvent from "@testing-library/user-event";
 
 describe("Page header test.", () => {
   const cart = {
-    data: () => [
+    data: [
       {
         id: 1,
         title: "Classic Cotton T-Shirt",

@@ -50,7 +50,7 @@ const mockData: CartData[] = [
 ];
 
 type MockCartType = {
-  data: () => CartData[];
+  data: CartData[];
   update: () => null;
   remove: (id: number) => void;
   totalItems: () => number;
@@ -64,7 +64,7 @@ const TestWrapper = ({
   const [data, setData] = useState<CartData[]>(mockData);
 
   const cart: MockCartType = {
-    data: () => data,
+    data: data,
     update: () => null,
     remove(id: number) {
       setData((prev) => [...prev.filter((item) => item.id !== id)]);
