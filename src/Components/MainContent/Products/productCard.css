@@ -1,9 +1,3 @@
-.products-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.25rem;
-}
-
 .product-card {
   border-radius: 1rem;
   padding: 1.5rem 1.25rem;

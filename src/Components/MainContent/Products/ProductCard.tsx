@@ -24,7 +24,7 @@ function ProductCard({ product }: { product: Product }) {
   };
 
   return (
-    <div className="product-card">
+    <li className="product-card">
       <div className="product-image">
         <img src={product.image} alt={`Image of ${product.title}`} />
       </div>
@@ -79,7 +79,7 @@ function ProductCard({ product }: { product: Product }) {
           </button>
         )}
       </div>
-    </div>
+    </li>
   );
 }
 

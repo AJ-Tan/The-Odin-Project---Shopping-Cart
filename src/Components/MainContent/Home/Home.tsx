@@ -9,7 +9,7 @@ function Home() {
   const { store } = useOutletContext<{ store: StoreType }>();
 
   if (store.loading) return <LoadingContent />;
-  if (store.loadingErr) return <ErrorContent />;
+  if (store.loadingErr) return <ErrorContent errorMessage={store.loadingErr} />;
 
   const storeItem = store.findData(3);
   if (!storeItem) return;
