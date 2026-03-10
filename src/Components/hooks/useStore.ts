@@ -27,7 +27,7 @@ type Cart = {
   quantity: number;
 };
 
-type CartData = Product & { quantity: number };
+export type CartData = Product & { quantity: number };
 
 export type CartType = {
   data: () => CartData[];
