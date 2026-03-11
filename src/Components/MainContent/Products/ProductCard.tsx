@@ -2,25 +2,14 @@ import { useOutletContext } from "react-router";
 import type { CartType, Product } from "../../hooks/useStore";
 import Rating from "../CommonComponent/Rating/Rating";
 import "./productCard.css";
-import { useEffect, useRef } from "react";
+import QuantityInputControls from "../CommonComponent/QuantityInput/QuantityInputControls";
 
 function ProductCard({ product }: { product: Product }) {
   const { cart } = useOutletContext<{ cart: CartType }>();
-  const inputRef = useRef<HTMLInputElement | null>(null);
   const cartData = cart.data.find((item) => item.id === product.id);
-
-  useEffect(() => {
-    if (inputRef.current instanceof HTMLInputElement) {
-      inputRef.current.value = (cartData ? cartData.quantity : 0).toString();
-    }
-  }, [cartData]);
 
   const updateCart = (id: number, qty: number) => {
     cart.update(id, qty);
-  };
-
-  const replaceCart = (id: number, e: React.FocusEvent<HTMLInputElement>) => {
-    cart.update(id, Number(e.target.value), true);
   };
 
   return (
@@ -38,37 +27,7 @@ function ProductCard({ product }: { product: Product }) {
           <Rating rating={product.rating} />
         </div>
         {cartData ? (
-          <div className="product-controls">
-            <button
-              type="button"
-              className="product-decrement"
-              onClick={() => updateCart(product.id, -1)}
-            >
-              -
-            </button>
-            <input
-              ref={inputRef}
-              type="number"
-              name="product-quantity"
-              className="product-quantity"
-              min={0}
-              onKeyDown={(e) => {
-                if (e.key === "-") {
-                  e.preventDefault();
-                } else if (e.key === "Enter") {
-                  e.currentTarget.blur();
-                }
-              }}
-              onBlur={(e) => replaceCart(product.id, e)}
-            />
-            <button
-              type="button"
-              className="product-increment"
-              onClick={() => updateCart(product.id, 1)}
-            >
-              +
-            </button>
-          </div>
+          <QuantityInputControls productId={product.id} />
         ) : (
           <button
             type="button"
