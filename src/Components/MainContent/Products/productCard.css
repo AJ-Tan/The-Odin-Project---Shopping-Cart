@@ -73,7 +73,7 @@
   background-color: var(--primary-color-1);
   font-size: 0.9rem;
   padding-block: 0;
-  height: 2.1778rem;
+  height: 2.02rem;
   box-shadow: 0 4px 12px var(--shadow-color);
 
   &:hover {

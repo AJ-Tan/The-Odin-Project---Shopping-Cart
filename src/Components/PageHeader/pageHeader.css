@@ -49,6 +49,13 @@ ul {
       font-size: 1.75rem;
     }
   }
+
+  @media screen and (max-width: 550px) {
+    h1 {
+      margin-block-start: 0.2rem;
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .menu-icon,
