@@ -2,6 +2,7 @@ import { useOutletContext } from "react-router";
 import type { CartType } from "../../../hooks/useStore";
 import "./QuantityInputControls.css";
 import { useEffect, useRef } from "react";
+import RemoveIcon from "../../../../assets/delete-icon.svg?react";
 
 function QuantityInputControls({ productId }: { productId: number }) {
   const { cart } = useOutletContext<{ cart: CartType }>();
@@ -20,6 +21,10 @@ function QuantityInputControls({ productId }: { productId: number }) {
 
   const replaceCart = (id: number, e: React.FocusEvent<HTMLInputElement>) => {
     cart.update(id, Number(e.target.value), true);
+  };
+
+  const removeCart = (id: number) => {
+    cart.remove(id);
   };
 
   return (
@@ -52,6 +57,13 @@ function QuantityInputControls({ productId }: { productId: number }) {
         onClick={() => updateCart(productId, 1)}
       >
         +
+      </button>
+      <button
+        type="button"
+        className="product-remove"
+        onClick={() => removeCart(productId)}
+      >
+        <RemoveIcon />
       </button>
     </div>
   );

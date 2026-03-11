@@ -38,3 +38,18 @@
     display: none;
   }
 }
+
+button.product-remove {
+  width: 1.9rem;
+  padding: 0.1rem;
+  background-color: transparent;
+  margin-inline-start: 0.5rem;
+
+  svg {
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+}
