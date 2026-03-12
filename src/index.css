@@ -43,11 +43,14 @@
   --shadow-color-layer-1: rgba(0, 0, 0, 0.06);
   --shadow-color-layer-2: rgba(0, 0, 0, 0.08);
   --bg-color-1: rgb(255, 255, 255);
+  --backdrop-color: rgba(0, 0, 0, 0.6);
 }
 
 :root {
   --animation-speed: 0.35s;
   --transition-speed: 0.2s;
+  --transition-modal-open: 0.5s;
+  --transition-modal-close: 0.35s;
 }
 
 a {

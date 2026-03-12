@@ -68,6 +68,7 @@ main {
   width: 100%;
 
   &:hover {
+    border-color: transparent;
     background-color: var(--primary-color-1-hover);
     color: var(--text-color-1);
   }
