@@ -34,6 +34,7 @@ export type CartType = {
   update: (id: number, qty?: number | null, replace?: boolean) => void;
   remove: (id: number) => void;
   totalItems: () => number;
+  clearCart: () => void;
 };
 
 export default function useStore() {
@@ -144,6 +145,10 @@ export default function useStore() {
     return cartData.reduce((prev, curr) => prev + curr.quantity, 0);
   };
 
+  const clearCart = () => {
+    setCartData([]);
+  };
+
   const cart = {
     data: cartData.reduce((prev, cart): CartData[] => {
       const product = findStoreData(cart.id)!;
@@ -153,6 +158,7 @@ export default function useStore() {
     update: updateCart,
     remove: removeCart,
     totalItems,
+    clearCart,
   };
 
   return {

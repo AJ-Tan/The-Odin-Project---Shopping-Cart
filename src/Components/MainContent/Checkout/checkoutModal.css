@@ -1,0 +1,46 @@
+@starting-style {
+  #checkout-modal[open] {
+    opacity: 0;
+    transform: translateY(-60%);
+  }
+}
+
+#checkout-modal {
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  border-radius: 1rem;
+  margin-inline: auto;
+  padding: 2rem 3rem;
+
+  opacity: 1;
+  transition: all var(--transition-modal-open);
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    color: var(--text-color-3);
+  }
+
+  &::backdrop {
+    background-color: var(--backdrop-color);
+  }
+}
+
+#checkout-modal.close {
+  animation: modal-fade-out var(--transition-modal-close);
+}
+
+@keyframes modal-fade-out {
+  from {
+    transform: translateY(-50%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-60%);
+    opacity: 0;
+  }
+}
