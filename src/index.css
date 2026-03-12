@@ -22,6 +22,7 @@
 }
 
 :root {
+  --page-header-gap: 0.5rem;
   --page-wrapper-mw: 73rem;
   --fonts-1: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
@@ -39,6 +40,8 @@
   --color-danger: red;
   --rating-color-bg: rgb(209, 215, 226);
   --shadow-color: rgba(0, 0, 0, 0.15);
+  --shadow-color-layer-1: rgba(0, 0, 0, 0.06);
+  --shadow-color-layer-2: rgba(0, 0, 0, 0.08);
   --bg-color-1: rgb(255, 255, 255);
 }
 

@@ -1,6 +1,7 @@
 .home-wrapper {
   max-width: var(--page-wrapper-mw);
   margin-inline: auto;
+  padding-block-start: 1rem;
 }
 
 .home-content {

@@ -4,7 +4,7 @@
 }
 
 .products-header {
-  margin-block-end: 1rem;
+  margin-block-end: var(--page-header-gap);
 }
 
 .products-list {
