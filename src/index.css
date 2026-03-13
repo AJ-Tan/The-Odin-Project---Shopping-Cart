@@ -14,7 +14,7 @@
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
-  font-size: clamp(13.5px, calc((100vw - 20px) * 0.0356), 19px);
+  font-size: clamp(12.5px, calc((100vw - 20px) * 0.0356), 19px);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
