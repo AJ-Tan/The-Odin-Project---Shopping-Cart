@@ -58,7 +58,7 @@ main {
 .primary-button {
   background-color: var(--primary-color-1);
   border-radius: 0.5rem;
-  color: var(--text-color-1);
+  color: black;
   display: block;
   font-size: 1.1rem;
   font-weight: 600;
@@ -70,7 +70,7 @@ main {
   &:hover {
     border-color: transparent;
     background-color: var(--primary-color-1-hover);
-    color: var(--text-color-1);
+    color: black;
   }
 }
 

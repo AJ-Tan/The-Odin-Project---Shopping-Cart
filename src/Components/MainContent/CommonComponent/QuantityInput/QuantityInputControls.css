@@ -13,6 +13,7 @@
   }
 
   button {
+    border: none;
     background-color: var(--primary-color-1);
     &:hover {
       background-color: var(--primary-color-1-hover);
@@ -33,6 +34,8 @@
     outline: none;
     font-size: 1.1rem;
     text-align: center;
+    background-color: var(--input-bg-color);
+    color: var(--input-text-color);
   }
   .product-quantity::-webkit-inner-spin-button {
     display: none;

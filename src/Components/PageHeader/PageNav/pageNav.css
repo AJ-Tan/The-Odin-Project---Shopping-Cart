@@ -50,12 +50,12 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--backdrop-color);
     z-index: 2;
   }
 
   .page-nav {
-    background-color: white;
+    background-color: var(--background-color);
     width: 65vw;
     max-width: 15rem;
     margin: 0;
