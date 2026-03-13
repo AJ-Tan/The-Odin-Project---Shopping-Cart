@@ -4,12 +4,12 @@ import type { RouteObject } from "react-router";
 import Products from "./Components/MainContent/Products/Products";
 import Checkout from "./Components/MainContent/Checkout/Checkout";
 import App from "./App";
-import ErrorPage from "./Components/PageError";
+import PageError from "./Components/PageError/PageError";
 
 export const routes: RouteObject[] = [
   {
     path: "/",
-    errorElement: <ErrorPage />,
+    errorElement: <PageError />,
     element: <App />,
   },
   {
