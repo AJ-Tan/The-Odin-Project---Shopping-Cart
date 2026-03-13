@@ -12,4 +12,5 @@ export default defineConfig({
     setupFiles: "./src/setupTests.ts", // Optional: Path to a setup file (create it in Step 5)
     css: true, // Optional: Include CSS in tests if needed
   },
+  base: "/The-Odin-Project---Shopping-Cart/",
 });
