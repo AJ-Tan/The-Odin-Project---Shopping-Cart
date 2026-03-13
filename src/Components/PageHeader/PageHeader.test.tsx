@@ -50,6 +50,7 @@ describe("Page header test.", () => {
     update: () => "",
     remove: () => "",
     totalItems: () => 6,
+    clearCart: () => {},
   };
 
   it("Initial render.", () => {

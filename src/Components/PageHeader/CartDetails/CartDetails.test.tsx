@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { MemoryRouter } from "react-router";
 import CartDetails from "./CartDetails";
 import userEvent from "@testing-library/user-event";
-import type { CartData } from "../../hooks/useStore";
+import type { CartData, CartType } from "../../hooks/useStore";
 import { useState } from "react";
 import type { JSX } from "react/jsx-runtime";
 
@@ -49,27 +49,21 @@ const mockData: CartData[] = [
   },
 ];
 
-type MockCartType = {
-  data: CartData[];
-  update: () => null;
-  remove: (id: number) => void;
-  totalItems: () => number;
-};
-
 const TestWrapper = ({
   children,
 }: {
-  children: (cart: MockCartType) => JSX.Element;
+  children: (cart: CartType) => JSX.Element;
 }) => {
   const [data, setData] = useState<CartData[]>(mockData);
 
-  const cart: MockCartType = {
+  const cart: CartType = {
     data: data,
     update: () => null,
     remove(id: number) {
       setData((prev) => [...prev.filter((item) => item.id !== id)]);
     },
     totalItems: () => 6,
+    clearCart: () => {},
   };
   return children(cart);
 };

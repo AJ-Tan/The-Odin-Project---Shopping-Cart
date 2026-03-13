@@ -86,4 +86,5 @@ const mockCart = {
   update: vi.fn(),
   remove: vi.fn(),
   totalItems: vi.fn(),
+  clearCart: vi.fn(),
 };

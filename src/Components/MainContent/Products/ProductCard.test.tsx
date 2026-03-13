@@ -64,6 +64,7 @@ const TestWrapper = () => {
         if (!cart.length) return 0;
         return cart.reduce((prev, curr) => prev + curr.quantity, 0);
       },
+      clearCart() {},
     },
   };
 
