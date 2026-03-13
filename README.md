@@ -1,73 +1,147 @@
-# React + TypeScript + Vite
+# CartVariety -- Shopping Cart React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **shopping cart web application** built with **React +
+TypeScript** as part of The Odin Project React curriculum.\
+This project focuses on learning component architecture, state
+management, React Router, and testing while building a realistic
+e-commerce interface.
 
-Currently, two official plugins are available:
+The app allows users to browse products, add items to the cart, update
+quantities, and proceed to checkout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+# Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Home Page
 
-## Expanding the ESLint configuration
+![Home Page Screenshot](./public/screenshots/Home.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Products Page
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Products Page Screenshot](./public/screenshots/Products.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Checkout Page
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+![Checkout Page Screenshot](./public/screenshots/Checkout.png)
+
+---
+
+# Features
+
+- Product listing page
+- Product quantity controls
+- Add / remove items from cart
+- Dynamic cart counter in the navbar
+- Checkout page with cart summary
+- Product ratings display
+- Responsive product grid layout
+- Navigation using React Router
+- Component-based architecture
+- Type safety using TypeScript
+- Unit testing using Vitest and React Testing Library
+
+---
+
+# Technologies Used
+
+- React
+- TypeScript
+- React Router
+- Vitest
+- React Testing Library
+- CSS
+
+---
+
+# Concepts Practiced
+
+This project was built while learning the following topics from The Odin
+Project React curriculum:
+
+### React Fundamentals
+
+- React Components
+- JSX
+- Passing Data Between Components
+- Rendering Techniques
+- Keys in React
+
+### State & Effects
+
+- Introduction to State
+- Managing and Updating State
+- Handling Side Effects
+
+### Class Components
+
+- Class-based Components
+- Component Lifecycle Methods
+
+### React Testing
+
+- Introduction to React Testing
+- Mocking Components and Callbacks
+
+### React Ecosystem
+
+- Type Checking
+- React Router
+- Fetching Data
+- Styling React Applications
+
+---
+
+# Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/cartvariety.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go into the project folder:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd cartvariety
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+# Running Tests
+
+```bash
+npm run test
+```
+
+Tests are written using Vitest + React Testing Library to validate UI
+behavior such as:
+
+- Adding items to cart
+- Updating item quantities
+- Removing items
+- Rendering correct cart totals
+
+---
+
+# Learning Outcome
+
+This project helped me practice:
+
+- Structuring a React application
+- Managing state across components
+- Using TypeScript with React
+- Writing unit tests for UI behavior
+- Building a realistic e-commerce UI
