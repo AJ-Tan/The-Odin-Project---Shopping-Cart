@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 
-type Rating = {
-  rate: number;
-  count: number;
-};
-
 export type Product = {
   id: number;
   title: string;
@@ -13,6 +8,11 @@ export type Product = {
   category: string;
   image: string;
   rating: Rating;
+};
+
+type Rating = {
+  rate: number;
+  count: number;
 };
 
 export type StoreType = {
@@ -46,7 +46,7 @@ export default function useStore() {
   );
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/")
+    fetch("/The-Odin-Project---Shopping-Cart/api.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Error Status: ${res.status}`);

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Wireless Bluetooth Headphones",
+    "price": 49.99,
+    "description": "High-quality wireless headphones with noise cancellation.",
+    "category": "electronics",
+    "image": "https://img-1.kwcdn.com/product/fancy/fa55de2e-5bd5-4332-8526-a207a65e9fee.jpg?imageView2/2/w/800/q/70/format/avif",
+    "rating": { "rate": 4.5, "count": 120 }
+  },
+  {
+    "id": 2,
+    "title": "Men's Casual T-Shirt",
+    "price": 15.99,
+    "description": "Comfortable cotton t-shirt for everyday wear.",
+    "category": "clothing",
+    "image": "https://www.rrj.com.ph/cdn/shop/products/ssph.zone-1704689412-RMRTEH23_066_-_140418_NAVY_BLUE-1_2000x.jpg?v=1704690364",
+    "rating": { "rate": 3.8, "count": 80 }
+  },
+  {
+    "id": 3,
+    "title": "Smartphone 128GB",
+    "price": 299.99,
+    "description": "Latest smartphone with powerful performance.",
+    "category": "electronics",
+    "image": "https://ansons.ph/wp-content/uploads/2025/08/37_GALAXY-A07-Black-480x480.jpg",
+    "rating": { "rate": 4.7, "count": 200 }
+  },
+  {
+    "id": 4,
+    "title": "Women's Handbag",
+    "price": 39.99,
+    "description": "Stylish handbag with multiple compartments.",
+    "category": "accessories",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP08Kkg8jyybMqhEyHRgmtkL_kMZ6eqTjFuA&s",
+    "rating": { "rate": 4.2, "count": 65 }
+  },
+  {
+    "id": 5,
+    "title": "Running Shoes",
+    "price": 59.99,
+    "description": "Lightweight running shoes for daily exercise.",
+    "category": "footwear",
+    "image": "https://down-ph.img.susercontent.com/file/ph-11134207-7rasd-ma81vxzs4fub48.webp",
+    "rating": { "rate": 4.6, "count": 140 }
+  },
+  {
+    "id": 6,
+    "title": "Digital Watch",
+    "price": 25.5,
+    "description": "Water-resistant digital watch with alarm.",
+    "category": "accessories",
+    "image": "https://timex.ph/cdn/shop/files/TW2V98000.jpg?v=1728620945",
+    "rating": { "rate": 3.9, "count": 70 }
+  },
+  {
+    "id": 7,
+    "title": "Gaming Mouse",
+    "price": 29.99,
+    "description": "Ergonomic gaming mouse with RGB lighting.",
+    "category": "electronics",
+    "image": "https://www.itech.ph/wp-content/uploads/2022/03/Razer-DeathAdder-Essential-Gaming-Mouse-with-6400-DPI-Optical-Sensor-Black.jpg",
+    "rating": { "rate": 4.3, "count": 110 }
+  },
+  {
+    "id": 8,
+    "title": "Office Chair",
+    "price": 89.99,
+    "description": "Comfortable office chair with lumbar support.",
+    "category": "furniture",
+    "image": "https://www.costuless.com.ph/wp-content/uploads/2020/05/LUXE-PU.png",
+    "rating": { "rate": 4.1, "count": 95 }
+  },
+  {
+    "id": 9,
+    "title": "Coffee Maker",
+    "price": 45.0,
+    "description": "Automatic coffee maker with timer.",
+    "category": "appliances",
+    "image": "https://www.americanheritage.ph/cdn/shop/products/AHCM-6275-01.jpg?v=1625638410",
+    "rating": { "rate": 4.4, "count": 130 }
+  },
+  {
+    "id": 10,
+    "title": "Backpack",
+    "price": 35.99,
+    "description": "Durable backpack suitable for travel and school.",
+    "category": "bags",
+    "image": "https://images-cdn.ubuy.co.in/660afb0ee5b60126023db7d9-aesthetic-backpack-cute-student-backpack.jpg",
+    "rating": { "rate": 3.7, "count": 60 }
+  },
+  {
+    "id": 11,
+    "title": "Bluetooth Speaker",
+    "price": 22.99,
+    "description": "Portable speaker with deep bass.",
+    "category": "electronics",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkzm330_QXVLpQJnT6jKW3ixSYYI9Vka9t6Q&s",
+    "rating": { "rate": 4.6, "count": 150 }
+  },
+  {
+    "id": 12,
+    "title": "Desk Lamp",
+    "price": 18.75,
+    "description": "LED desk lamp with adjustable brightness.",
+    "category": "home",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl3rVdl30LHTaSOmXrYp_vchbVE43ndCJotw&s",
+    "rating": { "rate": 4.0, "count": 85 }
+  },
+  {
+    "id": 13,
+    "title": "Fitness Tracker",
+    "price": 55.0,
+    "description": "Track your daily activity and health metrics.",
+    "category": "electronics",
+    "image": "https://down-ph.img.susercontent.com/file/bffe01cac23053190661d7b57ffe4ac8",
+    "rating": { "rate": 4.3, "count": 170 }
+  },
+  {
+    "id": 14,
+    "title": "Sunglasses",
+    "price": 12.99,
+    "description": "UV protection sunglasses with stylish design.",
+    "category": "accessories",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgtGOashCSQlXMfSZQ11MA4fmiri3YRF_3CA&s",
+    "rating": { "rate": 3.6, "count": 45 }
+  },
+  {
+    "id": 15,
+    "title": "Electric Kettle",
+    "price": 27.49,
+    "description": "Fast boiling electric kettle with auto shut-off.",
+    "category": "appliances",
+    "image": "https://www.smappliance.com/cdn/shop/products/10160529-KW-1364-1.8LE.KETTLE.png?v=1620837382",
+    "rating": { "rate": 4.5, "count": 125 }
+  },
+  {
+    "id": 16,
+    "title": "Notebook Set",
+    "price": 9.99,
+    "description": "Pack of 3 ruled notebooks.",
+    "category": "stationery",
+    "image": "https://image-cdn.ubuy.com/12-pack-notebooks-journals-bulk-with-12/400_400_100/683d54c616a4262a9606b8fa.jpg",
+    "rating": { "rate": 3.9, "count": 40 }
+  },
+  {
+    "id": 17,
+    "title": "Wireless Charger",
+    "price": 19.99,
+    "description": "Fast wireless charging pad.",
+    "category": "electronics",
+    "image": "https://www.belkin.com/dw/image/v2/BGBH_PRD/on/demandware.static/-/Sites-master-product-catalog-blk/default/dw784b55c7/images/hi-res/6/152404694_WIZ021ttBK_FPK_WEB.jpg?sfrm=png",
+    "rating": { "rate": 4.2, "count": 90 }
+  },
+  {
+    "id": 18,
+    "title": "Yoga Mat",
+    "price": 21.0,
+    "description": "Non-slip yoga mat for workouts.",
+    "category": "fitness",
+    "image": "https://contents.mediadecathlon.com/p2940263/k$a5497573eda45c1fa216dc2723cbb610/beginner-yoga-mat-180-cm-x-50-cm-x-5-mm-dark-blue-domyos-8928284.jpg",
+    "rating": { "rate": 4.7, "count": 160 }
+  },
+  {
+    "id": 19,
+    "title": "Water Bottle",
+    "price": 11.5,
+    "description": "Reusable stainless steel water bottle.",
+    "category": "fitness",
+    "image": "https://www.motoworld.com.ph/cdn/shop/files/BM11-AC-WB02-K-3.png?v=1725953983&width=1214",
+    "rating": { "rate": 3.5, "count": 55 }
+  },
+  {
+    "id": 20,
+    "title": "Laptop Stand",
+    "price": 32.99,
+    "description": "Adjustable aluminum laptop stand.",
+    "category": "office",
+    "image": "https://down-ph.img.susercontent.com/file/sg-11134201-22100-7ftyhkqdveivbf.webp",
+    "rating": { "rate": 4.4, "count": 105 }
+  }
+]
